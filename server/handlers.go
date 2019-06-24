@@ -162,7 +162,7 @@ type discovery struct {
 func (s *Server) discoveryHandler() (http.HandlerFunc, error) {
 	d := discovery{
 		Issuer:      s.issuerURL.String(),
-		Auth:        s.absURL("/auth"),
+		Auth:        s.absAuthURL("/auth"),
 		Token:       s.absURL("/token"),
 		Keys:        s.absURL("/keys"),
 		Subjects:    []string{"public"},
@@ -234,7 +234,7 @@ func (s *Server) handleAuthorization(w http.ResponseWriter, r *http.Request) {
 		for _, c := range connectors {
 			// TODO(ericchiang): Make this pass on r.URL.RawQuery and let something latter
 			// on create the auth request.
-			http.Redirect(w, r, s.absPath("/auth", c.ID)+"?req="+authReq.ID, http.StatusFound)
+			http.Redirect(w, r, s.absAuthPath("/auth", c.ID)+"?req="+authReq.ID, http.StatusFound)
 			return
 		}
 	}
@@ -247,7 +247,7 @@ func (s *Server) handleAuthorization(w http.ResponseWriter, r *http.Request) {
 			Name: conn.Name,
 			// TODO(ericchiang): Make this pass on r.URL.RawQuery and let something latter
 			// on create the auth request.
-			URL: s.absPath("/auth", conn.ID) + "?req=" + authReq.ID,
+			URL: s.absAuthPath("/auth", conn.ID) + "?req=" + authReq.ID,
 		}
 		i++
 	}

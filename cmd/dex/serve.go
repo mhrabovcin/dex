@@ -95,6 +95,10 @@ func serve(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	if len(c.AuthURL) == 0 {
+		c.AuthURL = c.Issuer
+	}
+
 	logger.Infof("config issuer: %s", c.Issuer)
 
 	prometheusRegistry := prometheus.NewRegistry()
@@ -221,6 +225,7 @@ func serve(cmd *cobra.Command, args []string) error {
 		SkipApprovalScreen:     c.OAuth2.SkipApprovalScreen,
 		AllowedOrigins:         c.Web.AllowedOrigins,
 		Issuer:                 c.Issuer,
+		AuthURL:                c.AuthURL,
 		Storage:                s,
 		Web:                    c.Frontend,
 		Logger:                 logger,
