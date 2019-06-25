@@ -1,0 +1,21 @@
+.theme-btn--primary {
+    color: #fff;
+    background-color: #7d58ff;
+    border-color: #7d58ff;
+    min-width: 200px;
+    padding: 6px 12px;
+}
+
+.theme-navbar {
+    background-color: #322366;
+    color: white;
+    font-size: 13px;
+    font-weight: 100;
+    height: 46px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+body {
+    background: radial-gradient(circle at 0% 90%, rgba(125, 88, 255, 0.5), transparent 50%), radial-gradient(circle at 100% 10%, rgba(255, 0, 125, 0.3) 0%, transparent 60%), #251a4c;
+}
