@@ -1,13 +1,6 @@
-.theme-body {
-  background-color: #efefef;
-  color: #333;
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
-}
-
 .theme-navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  color: #333;
+  background-color: #323a43;
+  color: white;
   font-size: 13px;
   font-weight: 100;
   height: 46px;
@@ -132,6 +125,8 @@
     padding: 0 10px;
 }
 
-body {
+.theme-body {
     background: radial-gradient(circle at 0% 90%, rgba(125, 88, 255, 0.5), transparent 50%), radial-gradient(circle at 100% 10%, rgba(255, 0, 125, 0.3) 0%, transparent 60%), #251a4c;
+    color: #333;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
 }
